@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine's day</title>
+  <style>
+    body {
+      margin:0; padding:0; height:100vh;
+      display:flex; justify-content:center; align-items:center;
+      background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+      font-family:'Comic Sans MS',cursive,sans-serif;
+      overflow:hidden;
+      text-align:center;
+    }
+    h1 {color:#fff;font-size:55px;text-shadow:2px 2px 8px rgba(0,0,0,0.3);animation:pulse 2s infinite;}
+    @keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
+    .btn{font-size:24px;padding:10px 20px;margin:20px;cursor:pointer;border:none;border-radius:12px;}
+    #yes{background:#ff4d6d;color:#fff;animation:glow 1.5s ease-in-out infinite alternate;}
+    @keyframes glow{from{box-shadow:0 0 10px #ff4d6d;}to{box-shadow:0 0 30px #ff4d6d;}}
+    #no{background:#444;color:#fff;}
+    .shake{animation:shake 0.3s;}@keyframes shake{25%{transform:translateX(-5px);}50%{transform:translateX(5px);}75%{transform:translateX(-5px);}}
+    .letter{display:none;background:#fff;border:6px solid red;border-radius:10px;padding:30px;max-width:500px;margin:auto;
+      box-shadow:0 0 10px rgba(255,0,0,0.5);animation:rainbowBorder 3s linear infinite,heartbeat 2s ease-in-out infinite;text-align:center;}
+    @keyframes rainbowBorder{0%{border-color:red;}20%{border-color:orange;}40%{border-color:yellow;}60%{border-color:green;}80%{border-color:blue;}100%{border-color:violet;}}
+    @keyframes heartbeat{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
+    .close-btn{margin-top:30px;font-size:24px;padding:15px 25px;border:none;border-radius:50%;background:red;color:#fff;cursor:pointer;}
+    #letterIcon{margin-top:10px;cursor:pointer;font-size:50px;animation:pulse 2s infinite;}
+    .heart{position:absolute;font-size:24px;animation:rise 6s linear forwards;}
+    @keyframes rise{0%{transform:translateY(100vh);opacity:1;}100%{transform:translateY(-10vh);opacity:0;}}
+
+    /* Surat panjang */
+    #loveLetter{
+      display:none;
+      background:linear-gradient(135deg,#e0c3fc,#8ec5fc);
+      border-radius:20px;
+      padding:40px;
+      max-width:600px;
+      margin:auto;
+      box-shadow:0 0 20px rgba(0,0,0,0.2);
+      max-height:80vh;
+      overflow-y:auto;
+      text-align:center;
+    }
+    #loveLetter h2{color:#4b0082;font-size:32px;margin-bottom:20px;}
+    #loveLetter p{font-size:22px;color:#333;line-height:1.6;text-align:left;}
+    #closeLetter{margin-top:20px;font-size:22px;padding:12px 20px;border:none;border-radius:12px;background:#4b0082;color:#fff;cursor:pointer;}
+  </style>
+</head>
+<body>
+  <!-- Pertanyaan -->
+  <div id="question">
+    <h1>I hope you can forgive me. Will you?</h1>
+    <button id="yes" class="btn">Yes</button>
+    <button id="no" class="btn">No</button>
+  </div>
+
+  <!-- Valentine -->
+  <div id="valentine" class="letter">
+    <h2>💌 Happy Valentine 💌</h2>
+    <p>Selamat Hari Valentine SAYANGG! Bahagia selalu yaa gadis cantikknan imutt, ini aku ada surat buat kamu.<br>Aku sayanggg kamu selamanya ❤️</p>
+    <div id="letterIcon">✉️</div>
+    <button class="close-btn">❤️ Close ❤️</button>
+  </div>
+
+  <!-- Surat panjang -->
+  <div id="loveLetter">
+    <h2>💖 Untukmu 💖</h2>
+    <p>
+     Sayangku...<br><br>
+      Di antara jarak yang memisahkan kita,<br>
+      Rindu terus membara di dalam dada.<br>
+      Bayangmu hadir dalam setiap angin berhembus,<br>
+      Mengirimkan cinta dan kerinduan yang tak terhingga.<br><br>
+      Rindu menjadi senyap yang membelenggu,<br>
+      Dalam keheningan, hati ini merindumu.<br>
+      Di malam sunyi, bintang-bintang bertanya,<br>
+      Kapan kita bisa bersama, menjalin cinta yang sejati?<br><br>
+      Di malam sunyi, kudengar desiran rindu,<br>
+      Memenuhi langit dengan kerinduan yang tulus.<br>
+      Dalam jarak yang memisahkan kita, hatiku terdampar,<br>
+      Menanti waktu tuk bersama, membangun mimpi yang abadi.<br><br>
+      Dalam rindu yang membara, kau tetap hadir dalam hati,<br>
+      Meski berjauhan, cintaku takkan pernah terlupa.<br>
+      Hanya dengan tatap mata, hanya dengan senyumanmu,<br>
+      Rindu terobati, dunia terasa utuh, tak tergantikan.<br><br>
+      Jarak memisahkan kita, sayang,<br>
+      Kau di sana, aku di sini terpaku,<br>
+      Tiada hari tanpa rindu yang menggelayang,<br>
+      Cinta kita, seperti puisi yang abadi dan terus berlabuh.<br><br>
+      Percayalah, cinta ini tak akan pudar,<br>
+      Meski jarak membentang, kita tak akan goyah,<br>
+      Untukmu, sejuta rindu tak akan pernah cukup,<br>
+      Namun cintaku padamu, lebih dari rindu yang mampu terucap.<br><br>
+      Aku ingin kita terus bersama, selamanya ❤️
+    </p>
+    <button id="closeLetter">💌 Close 💌</button>
+  </div>
+
+  <!-- Audio -->
+  <audio id="bgMusic" loop>
+    <source src="Banda Neira - Sampai Jadi Debu.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="popSound">
+    <source src="pop.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="heartbeatSound">
+    <source src="SOUND EFFECT DETAK JANTUNG.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const yesBtn=document.getElementById("yes");
+    const noBtn=document.getElementById("no");
+    const question=document.getElementById("question");
+    const valentine=document.getElementById("valentine");
+    const loveLetter=document.getElementById("loveLetter");
+    const music=document.getElementById("bgMusic");
+
+    noBtn.addEventListener("click",()=>{
+      noBtn.classList.add("shake");
+      setTimeout(()=>noBtn.classList.remove("shake"),300);
+      let noSize=parseFloat(window.getComputedStyle(noBtn).fontSize);
+      noBtn.style.fontSize=(noSize-4)+"px";
+      if(noSize<=10) noBtn.style.display="none";
+      let yesSize=parseFloat(window.getComputedStyle(yesBtn).fontSize);
+      yesBtn.style.fontSize=(yesSize+6)+"px";
+    });
+
+    yesBtn.addEventListener("click",()=>{
+      question.style.display="none";
+      valentine.style.display="block";
+      // mainkan lagu dengan fade-in
+      music.play();
+      music.volume=0;
+      let vol=0;
+      const fadeIn=setInterval(()=>{
+        if(vol<1){vol+=0.05;music.volume=vol;}
+        else clearInterval(fadeIn);
+      },300);
+    });
+
+    function createHeart(){
+      const heart=document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML=["❤️","💕","💜","💖","💙"][Math.floor(Math.random()*5)];
+      heart.style.left=Math.random()*window.innerWidth+"px";
+      heart.style.fontSize=(20+Math.random()*30)+"px";
+      document.body.appendChild(heart);
+      setTimeout(()=>heart.remove(),6000);
+    }
+    setInterval(createHeart,700); // efek love love dari bawah
+
+    document.querySelector(".close-btn").addEventListener("click",()=>{
+      document.getElementById("popSound").play();
+      document.getElementById("heartbeatSound").play();
+      valentine.style.display="none";
+      question.style.display="block";
+      // reset tombol Yes & No
+      yesBtn.style.fontSize="24px";
+      yesBtn.style.padding="10px 20px";
+      noBtn.style.fontSize="24px";
+      noBtn.style.display="inline-block";
+    });
+
+    document.getElementById("letterIcon").addEventListener("click",()=>{
+      valentine.style.display="none";
+      loveLetter.style.display="block";
+    });
+
+    document.getElementById("closeLetter").addEventListener("click",()=>{
+      loveLetter.style.display="none";
+      valentine.style.display="block";
+    });
+  </script>
+</body>
+</html>
